@@ -11,7 +11,7 @@ describe ForecastMan do
 
     it "returns temperature forecast data for the next day for the id's" do
       result = nil
-      VCR.use_cassette("OpenWeather - temperature forecast") do
+      VCR.use_cassette("OpenWeather - temperature forecast", :record => :none) do
         result = subject
       end
 
@@ -29,7 +29,7 @@ describe ForecastMan do
 
     it "returns temperature for the next day of the selected id" do
       result = nil
-      VCR.use_cassette("OpenWeather - temperature next weather") do
+      VCR.use_cassette("OpenWeather - temperature next weather", :record => :none) do
         result = subject
       end
 
