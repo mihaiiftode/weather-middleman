@@ -8,14 +8,14 @@ class ForecastMan
     @client = client || OpenWeather::ForecastDaily
   end
 
-  def temperatures(ids)
+  def temperature_ten_days(id)
     @options[:cnt] = FORECAST_FOR
-    ids.collect { |it| temperature(it) }
+    temperature(id)
   end
 
-  def next_day_temperature(id)
+  def next_day_temperatures(ids)
     @options[:cnt] = 1
-    temperature(id)
+    ids.collect { |it| temperature(it) }
   end
 
   private
