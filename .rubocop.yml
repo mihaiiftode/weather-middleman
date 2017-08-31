@@ -1,0 +1,28 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/schema_backup.rb
+    - db/fixtures/**/*
+    - bin/*
+    - 'vendor/**/*'
+
+inherit_from:
+  - .rubocop_todo.yml
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineHashBraceLayout:
+  EnforcedStyle: symmetrical
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Style/SingleLineBlockParams:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
