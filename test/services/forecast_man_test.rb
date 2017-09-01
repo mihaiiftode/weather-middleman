@@ -9,7 +9,7 @@ describe ForecastMan do
 
     subject { instance.temperature_ten_days(id) }
 
-    it "returns temperature forecast data for the next day for the id's" do
+    it "returns temperature forecast data for the next day for the id" do
       result = nil
       VCR.use_cassette("OpenWeather - temperature forecast", :record => :none) do
         result = subject
