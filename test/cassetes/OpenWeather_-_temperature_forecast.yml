@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.openweathermap.org/data/2.5/forecast/daily?APPID=bd5e378503939ddaee76f12ad7a97608&cnt=10&id=667268&units=metric
+    uri: http://api.openweathermap.org/data/2.5/forecast/daily?APPID&cnt=10&id=667268&units=metric
     body:
       encoding: US-ASCII
       string: ''
@@ -31,7 +31,7 @@ http_interactions:
       Connection:
       - keep-alive
       X-Cache-Key:
-      - "/data/2.5/forecast/daily?APPID=bd5e378503939ddaee76f12ad7a97608&cnt=10&id=667268&units=metric"
+      - "/data/2.5/forecast/daily?APPID&cnt=10&id=667268&units=metric"
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Credentials:
