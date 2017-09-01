@@ -17,7 +17,7 @@ describe Forecast do
   end
 
   describe "key" do
-    let(:params) { { city_id: "123", type: ForecastStatus::TEN_DAYS } }
+    let(:params) { { city_id: "123", type: ForecastType::TEN_DAYS } }
     let(:instance) { Forecast.new(params) }
     let(:expected_key) { "{\"city_id\":\"123\",\"type\":\"TEN_DAYS\"}" }
     subject { instance.key }
@@ -39,6 +39,20 @@ describe Forecast do
       result = subject
 
       assert_equal expected_value, result
+    end
+  end
+
+  describe "value from json" do
+    let(:json) { "{\"expiry_date\":\"123\",\"temperatures\":\"{}\"}" }
+    let(:instance) { Forecast.new }
+
+    subject { instance.value_from_json(json) }
+
+    it "should return a array with value" do
+      subject
+
+      assert_equal "123", instance.expiry_date
+      assert_equal "{}", instance.temperatures
     end
   end
 end
