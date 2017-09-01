@@ -60,22 +60,23 @@ group :development, :test do
   gem "minitest-reporters"
   gem "minitest-spec-rails"
 
-  gem "vcr", "~> 3.0"
   gem "json_expressions"
+  gem "vcr", "~> 3.0"
   gem "webmock", "~> 3.0", ">= 3.0.1"
+
+  gem "timecop", "~> 0.9.1"
 end
 
 group :development do
-  # # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  # gem "pry"
-  # gem "pry-coolline"
-  # gem "pry-rails"
-  # gem "pry-remote"
-  # gem "pry-rescue"
-  # gem "pry-stack_explorer"
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem "pry"
+  gem "pry-coolline"
+  gem "pry-rails"
+  gem "pry-remote"
+  gem "pry-rescue"
+  gem "pry-stack_explorer"
   gem "web-console", ">= 3.3.0"
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/forecast/daily?APPID=&cnt=1&id=2618425&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 02 Sep 2017 23:20:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '407'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/forecast/daily?APPID=&cnt=1&id=2618425&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"city":{"id":2618425,"name":"Copenhagen","coord":{"lon":12.5655,"lat":55.6759},"country":"DK","population":0},"cod":"200","message":0.0356218,"cnt":1,"list":[{"dt":1504350000,"temp":{"day":9.58,"min":9.58,"max":9.69,"night":9.69,"eve":9.58,"morn":9.58},"pressure":1029.95,"humidity":100,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"speed":2.82,"deg":327,"clouds":56}]}'
+    http_version: 
+  recorded_at: Sat, 02 Sep 2017 23:20:58 GMT
+recorded_with: VCR 3.0.3
