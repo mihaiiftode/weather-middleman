@@ -16,7 +16,7 @@ module FetchCitiesForecast
     private
 
     def create_forecast(id)
-      forecast = Forecast.new({ city_id: id, type: ForecastType::NEXT_DAY })
+      forecast = Forecast.new(city_id: id, type: ForecastType::NEXT_DAY)
       handle_cache_response(forecast, @cache_repository.get_forecast(forecast.key))
     end
 

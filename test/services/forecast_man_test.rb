@@ -5,13 +5,13 @@ describe ForecastMan do
   let(:instance) { ForecastMan.new(units) }
 
   describe "temperature_ten_days" do
-    let(:id) { 667268 }
+    let(:id) { 667_268 }
 
     subject { instance.temperature_ten_days(id) }
 
     it "returns temperature forecast data for the next day for the id" do
       result = nil
-      VCR.use_cassette("OpenWeather - temperature forecast", :record => :none) do
+      VCR.use_cassette("OpenWeather - temperature forecast", record: :none) do
         result = subject
       end
 
@@ -23,13 +23,13 @@ describe ForecastMan do
   end
 
   describe "next_day_temperatures" do
-    let(:ids) { [2618425, 2950096, 667268] }
+    let(:ids) { [2_618_425, 2_950_096, 667_268] }
 
     subject { instance.next_day_temperatures(ids) }
 
     it "returns temperature for the next day of the selected id" do
       result = nil
-      VCR.use_cassette("OpenWeather - temperature next weather", :record => :none) do
+      VCR.use_cassette("OpenWeather - temperature next weather", record: :none) do
         result = subject
       end
 

@@ -2,7 +2,6 @@ module FetchCitiesForecast
   class Base < UseCase::Base
     depends FetchExistingEntries
 
-    def perform
-    end
+    def perform; end
   end
 end

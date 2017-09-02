@@ -3,14 +3,14 @@ require "test_helper"
 describe CacheRepository do
   let(:redis_client) { MiniTest::Mock.new }
   let(:instance) { CacheRepository.new(redis_client) }
-  let(:cached_entry1) {
-    Forecast.new({
-                     :city_id => 2618425,
-                     :type => ForecastType::TEN_DAYS,
-                     :expiry_date => "123",
-                     :temperatures => Hash.new
-                 })
-  }
+  let(:cached_entry1) do
+    Forecast.new(
+      city_id: 2_618_425,
+      type: ForecastType::TEN_DAYS,
+      expiry_date: "123",
+      temperatures: {}
+    )
+  end
 
   describe "add_forecasts" do
     let(:forecasts) { [cached_entry1] }

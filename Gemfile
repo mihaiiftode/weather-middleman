@@ -60,8 +60,8 @@ group :development, :test do
   gem "minitest-reporters"
   gem "minitest-spec-rails"
 
-  gem "vcr", "~> 3.0"
   gem "json_expressions"
+  gem "vcr", "~> 3.0"
   gem "webmock", "~> 3.0", ">= 3.0.1"
 
   gem "timecop", "~> 0.9.1"
@@ -77,7 +77,6 @@ group :development do
   # gem "pry-stack_explorer"
   gem "web-console", ">= 3.3.0"
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
