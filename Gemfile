@@ -63,6 +63,8 @@ group :development, :test do
   gem "vcr", "~> 3.0"
   gem "json_expressions"
   gem "webmock", "~> 3.0", ">= 3.0.1"
+
+  gem "timecop", "~> 0.9.1"
 end
 
 group :development do

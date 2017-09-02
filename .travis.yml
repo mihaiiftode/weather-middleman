@@ -4,3 +4,6 @@ rvm:
 
 notifications:
   email: false
+
+script:
+  - bundle exec rubocop
