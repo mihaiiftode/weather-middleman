@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/forecast/daily?APPID=&cnt=10&id=667268&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sat, 02 Sep 2017 23:18:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2657'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/forecast/daily?APPID=&cnt=10&id=667268&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"city":{"id":667268,"name":"Sibiu","coord":{"lon":24.15,"lat":45.8},"country":"RO","population":0},"cod":"200","message":0.0268056,"cnt":10,"list":[{"dt":1504346400,"temp":{"day":23,"min":23,"max":23,"night":23,"eve":23,"morn":23},"pressure":900.01,"humidity":65,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"speed":1.77,"deg":156,"clouds":68},{"dt":1504432800,"temp":{"day":17.68,"min":10.93,"max":20.5,"night":10.93,"eve":15.1,"morn":20.5},"pressure":896.79,"humidity":88,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"speed":1.06,"deg":174,"clouds":48,"rain":7.02},{"dt":1504519200,"temp":{"day":11.81,"min":8.78,"max":12.78,"night":8.78,"eve":11.39,"morn":9.9},"pressure":900.9,"humidity":80,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"speed":1.51,"deg":289,"clouds":80,"rain":0.95},{"dt":1504605600,"temp":{"day":11.4,"min":7.15,"max":11.4,"night":7.28,"eve":10.08,"morn":7.3},"pressure":905.28,"humidity":67,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"speed":2.66,"deg":290,"clouds":8,"rain":5.91},{"dt":1504692000,"temp":{"day":16.81,"min":7.28,"max":16.81,"night":7.28,"eve":12.11,"morn":10.68},"pressure":954.43,"humidity":0,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"speed":3.83,"deg":285,"clouds":30,"rain":0.43},{"dt":1504778400,"temp":{"day":19.64,"min":10.84,"max":19.64,"night":10.84,"eve":14.23,"morn":12.75},"pressure":953.26,"humidity":0,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"speed":2.89,"deg":306,"clouds":37,"rain":0.28},{"dt":1504864800,"temp":{"day":20.77,"min":9.19,"max":20.77,"night":9.19,"eve":13.58,"morn":13.57},"pressure":953.61,"humidity":0,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"speed":2.5,"deg":275,"clouds":12,"rain":0.79},{"dt":1504951200,"temp":{"day":16.95,"min":6.61,"max":16.95,"night":6.61,"eve":11.9,"morn":11.21},"pressure":952.76,"humidity":0,"weather":[{"id":501,"main":"Rain","description":"moderate
+        rain","icon":"10d"}],"speed":1.41,"deg":297,"clouds":42,"rain":3.41},{"dt":1505037600,"temp":{"day":19.04,"min":7.65,"max":19.04,"night":7.65,"eve":11.73,"morn":10.44},"pressure":952.08,"humidity":0,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"speed":1.51,"deg":78,"clouds":2},{"dt":1505124000,"temp":{"day":21.54,"min":9.24,"max":21.54,"night":9.24,"eve":14.69,"morn":11.75},"pressure":959.01,"humidity":0,"weather":[{"id":800,"main":"Clear","description":"sky
+        is clear","icon":"01d"}],"speed":2.73,"deg":158,"clouds":1}]}'
+    http_version: 
+  recorded_at: Sat, 02 Sep 2017 23:18:54 GMT
+recorded_with: VCR 3.0.3
