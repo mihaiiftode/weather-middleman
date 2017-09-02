@@ -8,15 +8,25 @@ module FetchCitiesForecast
     end
 
     def perform
-      @forecasts << @city_ids.collect(&method(:create_forecast))
-      @unknown_forecasts = @forecasts.collect{ |forecast| forecast.temperatures.blank?}
+      @city_ids.each(&method(:create_forecast)) unless @city_ids.empty?
+      context.forecasts = @forecasts
+      context.unknown_forecasts = @unknown_forecasts
     end
 
     private
 
     def create_forecast(id)
       forecast = Forecast.new({ city_id: id, type: ForecastType::NEXT_DAY })
-      forecast.expiry_date = @cache_repository.get_forecast(forecast.key)
+      handle_cache_response(forecast, @cache_repository.get_forecast(forecast.key))
+    end
+
+    def handle_cache_response(forecast, response)
+      if response.present?
+        forecast.value_from_json(response)
+        @forecasts << forecast
+      else
+        @unknown_forecasts << forecast
+      end
     end
   end
 end
