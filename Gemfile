@@ -68,13 +68,13 @@ group :development, :test do
 end
 
 group :development do
-  # # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  # gem "pry"
-  # gem "pry-coolline"
-  # gem "pry-rails"
-  # gem "pry-remote"
-  # gem "pry-rescue"
-  # gem "pry-stack_explorer"
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem "pry"
+  gem "pry-coolline"
+  gem "pry-rails"
+  gem "pry-remote"
+  gem "pry-rescue"
+  gem "pry-stack_explorer"
   gem "web-console", ">= 3.3.0"
 end
 

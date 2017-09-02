@@ -1,7 +1,8 @@
 require "open_weather"
 
 class ForecastMan
-  FORECAST_FOR = 10.freeze
+  FORECAST_FOR_10_DAYS = 10.freeze
+  FORECAST_FOR_1_DAY = 1.freeze
 
   def initialize(units, client = nil)
     @options = { units: units, APPID: ENV["WEATHER_MAN_API_KEY"] }
@@ -9,13 +10,13 @@ class ForecastMan
   end
 
   def temperature_ten_days(id)
-    @options[:cnt] = FORECAST_FOR
+    @options[:cnt] = FORECAST_FOR_10_DAYS
     temperature(id)
   end
 
-  def next_day_temperatures(ids)
-    @options[:cnt] = 1
-    ids.collect { |it| temperature(it) }
+  def next_day_temperature(id)
+    @options[:cnt] = FORECAST_FOR_1_DAY
+    temperature(id)
   end
 
   private

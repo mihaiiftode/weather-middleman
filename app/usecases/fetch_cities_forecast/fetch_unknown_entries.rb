@@ -10,9 +10,7 @@ module FetchCitiesForecast
     end
 
     def perform
-      ids = @unknown_forecasts.collect(&:city_id)
-      temperatures = @forecast_man.next_day_temperatures(ids)
-      @unknown_forecasts.each_with_index { |item, index| item.temperatures = temperatures[index] }
+      @unknown_forecasts.map{ |it| it.temperatures = @forecast_man.next_day_temperature(it.city_id)}
       @forecasts += @unknown_forecasts
       context.forecasts = @forecasts
     end
