@@ -47,7 +47,7 @@ describe FetchCitiesForecast::MapTemperatureToResponse do
                      "clouds":56
                   }
                ]
-            }')
+            }', symbolize_names: true)
       )
     end
     let(:threshold) { 0 }

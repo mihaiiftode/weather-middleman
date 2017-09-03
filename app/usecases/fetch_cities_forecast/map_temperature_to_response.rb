@@ -14,7 +14,7 @@ module FetchCitiesForecast
 
     def map_response(forecast)
       temperatures = forecast.temperatures
-      forecast.temperatures = temperatures["list"][0]["temp"]["day"]
+      forecast.temperatures = temperatures[:list][0][:temp][:day]
     end
   end
 end

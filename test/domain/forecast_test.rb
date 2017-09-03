@@ -43,28 +43,28 @@ describe Forecast do
     end
   end
 
-  describe "value from json" do
-    let(:json) { "{\"expiry_date\":\"123\",\"temperatures\":\"{}\"}" }
+  describe "map value" do
+    let(:val) { { expiry_date: 123, temperatures: Hash.new } }
 
-    subject { instance.value_from_json(json) }
+    subject { instance.map_value(val) }
 
-    it "should return a array with value" do
+    it "should map hash values to properties" do
       subject
 
-      assert_equal "123", instance.expiry_date
-      assert_equal "{}", instance.temperatures
+      assert_equal 123, instance.expiry_date
+      assert_equal Hash.new, instance.temperatures
     end
   end
 
   describe "response" do
-    let(:params) { { city_id: "123", temperatures: 20 } }
+    let(:params) { { city_id: 123, temperatures: 20 } }
 
     subject { instance.response }
 
-    it "should return a json to be used as an response" do
+    it "should return a hash to be used as a response" do
       result = subject
 
-      assert_equal "{\"city_id\":\"123\",\"temperatures\":20}", result
+      assert_equal({ city_id: 123, temperatures: 20 }, result)
     end
   end
 end

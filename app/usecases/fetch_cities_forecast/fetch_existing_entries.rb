@@ -22,7 +22,7 @@ module FetchCitiesForecast
 
     def handle_cache_response(forecast, response)
       if response.present?
-        forecast.value_from_json(response)
+        forecast.map_value(response)
         @forecasts << forecast
       else
         @unknown_forecasts << forecast

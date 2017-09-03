@@ -15,13 +15,12 @@ class Forecast
     { expiry_date: @expiry_date, temperatures: @temperatures }.to_json
   end
 
-  def value_from_json(json)
-    value = JSON.parse(json, symbolize_names: true)
+  def map_value(value)
     @expiry_date = value[:expiry_date]
     @temperatures = value[:temperatures]
   end
 
   def response
-    { city_id: @city_id, temperatures: @temperatures }.to_json
+    { city_id: @city_id, temperatures: @temperatures }
   end
 end

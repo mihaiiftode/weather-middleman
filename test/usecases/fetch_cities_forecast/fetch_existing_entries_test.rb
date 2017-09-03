@@ -27,24 +27,24 @@ describe FetchCitiesForecast::FetchExistingEntries do
       let(:city_ids) { [2_618_425, 2_950_096] }
       let(:cached_entry1) do
         Forecast.new(
-          city_id: 2_618_425,
-          type: ForecastType::TEN_DAYS,
-          expiry_date: "123",
-          temperatures: {}
+            city_id: 2_618_425,
+            type: ForecastType::TEN_DAYS,
+            expiry_date: "123",
+            temperatures: {}
         )
       end
       let(:cached_entry2) do
         Forecast.new(
-          city_id: 2_950_096,
-          type: ForecastType::TEN_DAYS,
-          expiry_date: "123",
-          temperatures: {}
+            city_id: 2_950_096,
+            type: ForecastType::TEN_DAYS,
+            expiry_date: "123",
+            temperatures: {}
         )
       end
 
       it "tries to get the forecast from the cache" do
-        cache_repository.expect(:get_forecast, cached_entry1.value, [String])
-        cache_repository.expect(:get_forecast, cached_entry2.value, [String])
+        cache_repository.expect(:get_forecast, { expiry_date: "123", temperatures: {} }, [String])
+        cache_repository.expect(:get_forecast, { expiry_date: "123", temperatures: {} }, [String])
         context[:cache_repository] = cache_repository
 
         subject
@@ -54,8 +54,8 @@ describe FetchCitiesForecast::FetchExistingEntries do
 
       describe "trying to fetch forecasts works" do
         it "brings the correct info from the cache" do
-          cache_repository.expect(:get_forecast, cached_entry1.value, [String])
-          cache_repository.expect(:get_forecast, cached_entry2.value, [String])
+          cache_repository.expect(:get_forecast, { expiry_date: "123", temperatures: {} }, [String])
+          cache_repository.expect(:get_forecast, { expiry_date: "123", temperatures: {} }, [String])
 
           result = subject
 
