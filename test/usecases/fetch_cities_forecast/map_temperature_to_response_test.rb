@@ -2,11 +2,12 @@ require "test_helper"
 
 describe FetchCitiesForecast::MapTemperatureToResponse do
   describe "perform" do
-    let (:forecast) { Forecast.new(
-        city_id: 2_618_425,
-        type: ForecastType::TEN_DAYS,
-        expiry_date: "123",
-        temperatures: '{
+    let (:forecast) do
+      Forecast.new(
+          city_id: 2_618_425,
+          type: ForecastType::TEN_DAYS,
+          expiry_date: "123",
+          temperatures: JSON.parse('{
                "city":{
                   "id":2618425,
                   "name":"Copenhagen",
@@ -46,8 +47,9 @@ describe FetchCitiesForecast::MapTemperatureToResponse do
                      "clouds":56
                   }
                ]
-            }'
-    ) }
+            }')
+      )
+    end
     let(:threshold) { 0 }
     let(:context) { { forecasts: [forecast], threshold: threshold } }
 
@@ -65,7 +67,7 @@ describe FetchCitiesForecast::MapTemperatureToResponse do
       it "should filter the forecasts" do
         result = subject
 
-        assert_equal 0, result.forecasts.count
+        assert_equal 0, result.response.count
       end
     end
   end

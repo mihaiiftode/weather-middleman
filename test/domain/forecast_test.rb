@@ -1,9 +1,11 @@
 require "test_helper"
 
 describe Forecast do
+  let(:params) {}
+  let(:instance) { Forecast.new(params) }
+
   describe "initialize" do
-    let(:params) {}
-    subject { Forecast.new(params) }
+    subject { instance }
 
     describe "params contains attributes" do
       let(:params) { { city_id: "123" } }
@@ -31,7 +33,6 @@ describe Forecast do
 
   describe "value" do
     let(:params) { { expiry_date: "123", temperatures: "{}" } }
-    let(:instance) { Forecast.new(params) }
     let(:expected_value) { "{\"expiry_date\":\"123\",\"temperatures\":\"{}\"}" }
     subject { instance.value }
 
@@ -44,7 +45,6 @@ describe Forecast do
 
   describe "value from json" do
     let(:json) { "{\"expiry_date\":\"123\",\"temperatures\":\"{}\"}" }
-    let(:instance) { Forecast.new }
 
     subject { instance.value_from_json(json) }
 
@@ -53,6 +53,18 @@ describe Forecast do
 
       assert_equal "123", instance.expiry_date
       assert_equal "{}", instance.temperatures
+    end
+  end
+
+  describe "response" do
+    let(:params) { { city_id: "123", temperatures: 20 } }
+
+    subject { instance.response }
+
+    it "should return a json to be used as an response" do
+      result = subject
+
+      assert_equal "{\"city_id\":\"123\",\"temperatures\":20}", result
     end
   end
 end

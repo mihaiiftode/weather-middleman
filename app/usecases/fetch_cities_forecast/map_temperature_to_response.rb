@@ -6,15 +6,15 @@ module FetchCitiesForecast
     end
 
     def perform
-      context.forecasts = @forecasts.each(&method(:map_response)).select { |it| it.temperatures > @threshold}
+      context.response = @forecasts.each(&method(:map_response)).select { |it| it.temperatures > Integer(@threshold) }
+                              .map { |it| it.response }
     end
 
     private
 
     def map_response(forecast)
-      temperatures = JSON.parse(forecast.temperatures, symbolize_names: true)
-
-      forecast.temperatures = temperatures[:list][0][:temp][:day]
+      temperatures = forecast.temperatures
+      forecast.temperatures = temperatures["list"][0]["temp"]["day"]
     end
   end
 end

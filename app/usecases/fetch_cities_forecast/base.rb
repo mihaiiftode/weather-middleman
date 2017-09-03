@@ -1,7 +1,8 @@
 module FetchCitiesForecast
   class Base < UseCase::Base
-    depends FetchExistingEntries
+    depends FetchExistingEntries, FilterExpiredEntries, FetchUnknownEntries, MapTemperatureToResponse
 
-    def perform; end
+    def perform;
+    end
   end
 end

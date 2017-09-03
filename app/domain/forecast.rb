@@ -20,4 +20,8 @@ class Forecast
     @expiry_date = value[:expiry_date]
     @temperatures = value[:temperatures]
   end
+
+  def response
+    { city_id: @city_id, temperatures: @temperatures }.to_json
+  end
 end

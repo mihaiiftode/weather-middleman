@@ -10,7 +10,7 @@ module FetchCitiesForecast
     end
 
     def perform
-      @unknown_forecasts.map{ |it| it.temperatures = @forecast_man.next_day_temperature(it.city_id)}
+      @unknown_forecasts.map { |it| it.temperatures = @forecast_man.next_day_temperature(it.city_id) }
       @forecasts += @unknown_forecasts
       context.forecasts = @forecasts
     end
