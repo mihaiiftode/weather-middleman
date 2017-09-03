@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/forecast/daily?APPID=&cnt=1&id=2618425&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 03 Sep 2017 20:21:43 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '407'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/forecast/daily?APPID=&cnt=1&id=2618425&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"city":{"id":2618425,"name":"Copenhagen","coord":{"lon":12.5655,"lat":55.6759},"country":"DK","population":0},"cod":"200","message":0.0624042,"cnt":1,"list":[{"dt":1504436400,"temp":{"day":11.78,"min":9.77,"max":11.78,"night":9.77,"eve":11.78,"morn":11.78},"pressure":1026.94,"humidity":82,"weather":[{"id":800,"main":"Clear","description":"sky
+        is clear","icon":"01n"}],"speed":4.66,"deg":352,"clouds":0}]}'
+    http_version: 
+  recorded_at: Sun, 03 Sep 2017 20:21:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/forecast/daily?APPID=&cnt=1&id=2950096&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 03 Sep 2017 20:21:43 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '417'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/forecast/daily?APPID=&cnt=1&id=2950096&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"city":{"id":2950096,"name":"Bernau bei Berlin","coord":{"lon":13.5871,"lat":52.6798},"country":"DE","population":0},"cod":"200","message":0.0224943,"cnt":1,"list":[{"dt":1504436400,"temp":{"day":12.49,"min":8.84,"max":12.49,"night":8.84,"eve":12.49,"morn":12.49},"pressure":1022.32,"humidity":65,"weather":[{"id":803,"main":"Clouds","description":"broken
+        clouds","icon":"04n"}],"speed":3.01,"deg":345,"clouds":80}]}'
+    http_version: 
+  recorded_at: Sun, 03 Sep 2017 20:21:42 GMT
+- request:
+    method: get
+    uri: http://api.openweathermap.org/data/2.5/forecast/daily?APPID=&cnt=1&id=667268&units=metric
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - api.openweathermap.org
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 03 Sep 2017 20:21:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '395'
+      Connection:
+      - keep-alive
+      X-Cache-Key:
+      - "/data/2.5/forecast/daily?APPID=&cnt=1&id=667268&units=metric"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST
+    body:
+      encoding: UTF-8
+      string: '{"city":{"id":667268,"name":"Sibiu","coord":{"lon":24.15,"lat":45.8},"country":"RO","population":0},"cod":"200","message":1.3157799,"cnt":1,"list":[{"dt":1504432800,"temp":{"day":14,"min":11.09,"max":14,"night":11.09,"eve":14,"morn":14},"pressure":896.76,"humidity":98,"weather":[{"id":500,"main":"Rain","description":"light
+        rain","icon":"10d"}],"speed":0.81,"deg":193,"clouds":48,"rain":0.49}]}'
+    http_version: 
+  recorded_at: Sun, 03 Sep 2017 20:21:42 GMT
+recorded_with: VCR 3.0.3

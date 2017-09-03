@@ -1,7 +1,7 @@
 # Fetches summary of locations
 class SummaryController < ApplicationController
 
-  # rescue_from Exception, with: :invalid_params
+  rescue_from Exception, with: :invalid_params
   ALLOWED_PARAMS = [:units, :locations, :threshold].freeze
 
   def fetch
