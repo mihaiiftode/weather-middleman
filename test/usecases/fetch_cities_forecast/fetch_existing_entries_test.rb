@@ -27,18 +27,18 @@ describe FetchCitiesForecast::FetchExistingEntries do
       let(:city_ids) { [2_618_425, 2_950_096] }
       let(:cached_entry1) do
         Forecast.new(
-            city_id: 2_618_425,
-            type: ForecastType::TEN_DAYS,
-            expiry_date: "123",
-            temperatures: {}
+          city_id: 2_618_425,
+          type: ForecastType::TEN_DAYS,
+          expiry_date: "123",
+          temperatures: {}
         )
       end
       let(:cached_entry2) do
         Forecast.new(
-            city_id: 2_950_096,
-            type: ForecastType::TEN_DAYS,
-            expiry_date: "123",
-            temperatures: {}
+          city_id: 2_950_096,
+          type: ForecastType::TEN_DAYS,
+          expiry_date: "123",
+          temperatures: {}
         )
       end
 

@@ -44,7 +44,7 @@ describe Forecast do
   end
 
   describe "map value" do
-    let(:val) { { expiry_date: 123, temperatures: Hash.new } }
+    let(:val) { { expiry_date: 123, temperatures: {} } }
 
     subject { instance.map_value(val) }
 
@@ -52,7 +52,7 @@ describe Forecast do
       subject
 
       assert_equal 123, instance.expiry_date
-      assert_equal Hash.new, instance.temperatures
+      assert_equal({}, instance.temperatures)
     end
   end
 

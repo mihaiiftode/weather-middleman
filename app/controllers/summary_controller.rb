@@ -1,12 +1,11 @@
 # Fetches summary of locations
 class SummaryController < ApplicationController
-
   rescue_from Exception, with: :invalid_params
-  ALLOWED_PARAMS = [:units, :locations, :threshold].freeze
+  ALLOWED_PARAMS = %i[units locations threshold].freeze
 
   def fetch
     ensure_params
-    ids = params[:locations].split(',')
+    ids = params[:locations].split(",")
     threshold = Integer(params[:threshold])
     response = FetchCitiesForecast::Base.perform(units: params[:units], city_ids: ids, threshold: threshold).response
     render json: response, status: :ok
