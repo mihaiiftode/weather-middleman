@@ -84,6 +84,7 @@ GEM
       thor (~> 0.15)
     erubi (1.6.1)
     execjs (2.7.0)
+    facets (3.1.0)
     ffi (1.9.18)
     ffi (1.9.18-x64-mingw32)
     globalid (0.4.0)
@@ -263,6 +264,7 @@ DEPENDENCIES
   coffee-script-source (~> 1.9, >= 1.9.1.1)
   dotenv-rails
   envied (~> 0.9.1)
+  facets
   jbuilder (~> 2.5)
   json_expressions
   minitest

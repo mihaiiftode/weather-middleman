@@ -13,7 +13,7 @@ module FetchCitiesForecast
     private
 
     def map_response(forecast)
-      temperatures = forecast.temperatures
+      temperatures = forecast.temperatures.deep_symbolize_keys
       forecast.temperatures = temperatures[:list][0][:temp][:day]
     end
   end
