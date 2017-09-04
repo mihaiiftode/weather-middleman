@@ -3,7 +3,7 @@ module FetchCitiesForecast
     def before
       @cache_repository = context.cache_repository || CacheRepository.new
       @city_ids = context.city_ids
-      @unknown_forecasts = []
+      @unknown_forecasts = []  
       @forecasts = []
     end
 

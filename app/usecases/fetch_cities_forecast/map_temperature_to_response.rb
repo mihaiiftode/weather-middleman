@@ -1,7 +1,8 @@
 module FetchCitiesForecast
   class MapTemperatureToResponse < UseCase::Base
+    SMALL_THRESHOLD = "-999".freeze
     def before
-      @forecasts = context.forecasts
+      @forecasts = context.forecasts || SMALL_THRESHOLD
       @threshold = context.threshold
     end
 
