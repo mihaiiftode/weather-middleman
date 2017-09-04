@@ -67,4 +67,21 @@ describe Forecast do
       assert_equal({ city_id: 123, temperatures: 20 }, result)
     end
   end
+
+  describe "expired?" do
+    let(:params) { { expiry_date: nil } }
+
+    subject { instance.expired? }
+
+    it "should return the expired status if its nil" do
+
+      assert subject
+    end
+
+    it "should return the expired status if its expired" do
+      params[:expiry_date] = (Time.now - 1.year).to_s
+
+      assert subject
+    end
+  end
 end

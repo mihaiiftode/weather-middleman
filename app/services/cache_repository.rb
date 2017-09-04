@@ -3,6 +3,12 @@ class CacheRepository
     @redis_client = redis_client || Redis.new
   end
 
+  def add_forecast(new_forecast)
+    add_forecast!(new_forecast)
+  rescue Redis::BaseError
+    Rails.logger.error("Redis is down, can't update keys")
+  end
+
   def add_forecasts(new_forecasts)
     @redis_client.pipelined { new_forecasts.each(&method(:add_forecast)) }
   rescue Redis::BaseError
@@ -18,7 +24,7 @@ class CacheRepository
 
   private
 
-  def add_forecast(new_forecast)
+  def add_forecast!(new_forecast)
     @redis_client.set(new_forecast.key, new_forecast.value)
   end
 end

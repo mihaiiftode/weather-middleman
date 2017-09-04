@@ -23,4 +23,8 @@ class Forecast
   def response
     { city_id: @city_id, temperatures: @temperatures }
   end
+
+  def expired?
+    expiry_date.blank? || Time.now > Time.parse(expiry_date)
+  end
 end

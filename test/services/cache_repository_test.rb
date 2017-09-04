@@ -30,6 +30,21 @@ describe CacheRepository do
     end
   end
 
+  describe "add_forecast" do
+    let(:forecast) { cached_entry1 }
+
+    subject { instance.add_forecast(forecast) }
+
+    it "tries to cache the forecast" do
+
+      redis_client.expect(:set, nil, [cached_entry1.key, cached_entry1.value])
+
+      subject
+
+      redis_client.verify
+    end
+  end
+
   describe "get_address" do
     let(:key) { cached_entry1.key }
 

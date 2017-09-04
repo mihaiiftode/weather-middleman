@@ -8,7 +8,7 @@ describe FetchCitiesForecast::FetchUnknownEntries do
     let(:entry1) do
       Forecast.new(
         city_id: 2_618_425,
-        type: ForecastType::TEN_DAYS,
+        type: ForecastType::NEXT_DAY,
         expiry_date: "\"\"",
         temperatures: "{ \"temperature\": 20 }"
       )
@@ -16,7 +16,7 @@ describe FetchCitiesForecast::FetchUnknownEntries do
     let(:entry2) do
       Forecast.new(
         city_id: 2_950_096,
-        type: ForecastType::TEN_DAYS,
+        type: ForecastType::NEXT_DAY,
         expiry_date: "\"\"",
         temperatures: "{}"
       )

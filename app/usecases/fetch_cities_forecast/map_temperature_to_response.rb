@@ -1,14 +1,15 @@
 module FetchCitiesForecast
   class MapTemperatureToResponse < UseCase::Base
     SMALL_THRESHOLD = "-999".freeze
+
     def before
-      @forecasts = context.forecasts || SMALL_THRESHOLD
-      @threshold = context.threshold
+      @forecasts = context.forecasts
+      @threshold = context.threshold || SMALL_THRESHOLD
     end
 
     def perform
       context.response = @forecasts.each(&method(:map_response)).select { |it| it.temperatures > Integer(@threshold) }
-        .map(&:response)
+                             .map(&:response)
     end
 
     private
