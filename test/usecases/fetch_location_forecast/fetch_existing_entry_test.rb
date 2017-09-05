@@ -21,10 +21,10 @@ describe FetchLocationForecast::FetchExistingEntry do
       let(:city_id) { 2_618_425 }
       let(:cached_entry1) do
         Forecast.new(
-            city_id: 2_618_425,
-            type: ForecastType::TEN_DAYS,
-            expiry_date: "123",
-            temperatures: {}
+          city_id: 2_618_425,
+          type: ForecastType::TEN_DAYS,
+          expiry_date: "123",
+          temperatures: {}
         )
       end
 

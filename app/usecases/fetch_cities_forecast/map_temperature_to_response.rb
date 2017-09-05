@@ -9,7 +9,7 @@ module FetchCitiesForecast
 
     def perform
       context.response = @forecasts.each(&method(:map_response)).select { |it| it.temperatures > Integer(@threshold) }
-                             .map(&:response)
+        .map(&:response)
     end
 
     private

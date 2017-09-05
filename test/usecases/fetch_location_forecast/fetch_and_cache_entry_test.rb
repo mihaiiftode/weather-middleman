@@ -8,10 +8,10 @@ describe FetchLocationForecast::FetchAndCacheEntry do
     let(:city_id) { 2_618_425 }
     let(:entry1) do
       Forecast.new(
-          city_id: 2_618_425,
-          type: ForecastType::NEXT_DAY,
-          expiry_date: "",
-          temperatures: "{ \"temperature\": 20 }"
+        city_id: 2_618_425,
+        type: ForecastType::NEXT_DAY,
+        expiry_date: "",
+        temperatures: "{ \"temperature\": 20 }"
       )
     end
 

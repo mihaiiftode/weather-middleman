@@ -7,18 +7,18 @@ describe FetchCitiesForecast::CacheEntries do
     let(:context) { { unknown_forecasts: unknown_forecasts, cache_repository: cache_repository } }
     let(:entry_to_cache1) do
       Forecast.new(
-          city_id: 2_618_425,
-          type: ForecastType::TEN_DAYS,
-          expiry_date: nil,
-          temperatures: {}
+        city_id: 2_618_425,
+        type: ForecastType::TEN_DAYS,
+        expiry_date: nil,
+        temperatures: {}
       )
     end
     let(:entry_to_cache2) do
       Forecast.new(
-          city_id: 2_950_096,
-          type: ForecastType::TEN_DAYS,
-          expiry_date: nil,
-          temperatures: {}
+        city_id: 2_950_096,
+        type: ForecastType::TEN_DAYS,
+        expiry_date: nil,
+        temperatures: {}
       )
     end
 

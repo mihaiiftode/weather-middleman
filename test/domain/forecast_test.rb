@@ -74,7 +74,6 @@ describe Forecast do
     subject { instance.expired? }
 
     it "should return the expired status if its nil" do
-
       assert subject
     end
 

@@ -18,7 +18,7 @@ describe FetchCitiesForecast::FetchUnknownEntries do
         city_id: 2_950_096,
         type: ForecastType::NEXT_DAY,
         expiry_date: "\"\"",
-        temperatures: "{}"
+        temperatures: {}
       )
     end
     let(:context) { { forecast_man: forecast_man, forecasts: forecasts, unknown_forecasts: unknown_forecasts } }

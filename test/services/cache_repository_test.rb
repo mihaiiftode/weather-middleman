@@ -36,7 +36,6 @@ describe CacheRepository do
     subject { instance.add_forecast(forecast) }
 
     it "tries to cache the forecast" do
-
       redis_client.expect(:set, nil, [cached_entry1.key, cached_entry1.value])
 
       subject
